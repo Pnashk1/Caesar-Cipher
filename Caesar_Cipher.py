@@ -10,7 +10,7 @@ shift = int(input("Type the shift number:\n"))
 user_text = [i for i in text] #list comprehension for message
 user_text
 
-def encode(text,shift):
+def encrypt(text,shift):
     new_text = []
     for i in range(0,len(text)): #loops through user message
         letter=text[i]
@@ -21,12 +21,12 @@ def encode(text,shift):
     return new_text
 
 if direction=='encode':
-    print(''.join(encode(text,shift)))
+    print(''.join(encrypt(text,shift)))
 
-def decode(text,shift):
-    return encode((encode(text,shift)),-shift)
+def decrypt(text,shift):
+    return encrypt((encrypt(text,shift)),-shift)
 
 if direction=='decode':
-    print(''.join(decode(text,shift)))
+    print(''.join(decrypt(text,shift)))
 
 
